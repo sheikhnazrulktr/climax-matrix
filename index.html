@@ -6,8 +6,26 @@
   <title>Climax Matrix - Movie Website</title>
   <link rel="stylesheet" href="style.css">
   <style>
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background-image:
+        linear-gradient(90deg, rgba(4,4,8,.94), rgba(4,4,8,.58), rgba(4,4,8,.18)),
+        url("Gemini_Generated_Image_vr6x81vr6x81vr6x.png");
+      background-position: center;
+      background-size: cover;
+      animation: cinematicZoom 18s ease-in-out infinite alternate;
+    }
+    .hero-content { position: relative; z-index: 1; }
+    @keyframes cinematicZoom {
+      from { background-size: 100% auto; }
+      to { background-size: 115% auto; }
+    }
     .featured-video{padding:55px 6%;background:#0d0d12;text-align:center}
     .front-page-video{display:block;width:100%;max-width:1000px;max-height:560px;margin:0 auto;border-radius:14px;background:#000;box-shadow:0 12px 35px rgba(0,0,0,.45)}
+    @media (prefers-reduced-motion: reduce) {
+      .hero { animation: none; }
+    }
   </style>
 </head>
 <body>
