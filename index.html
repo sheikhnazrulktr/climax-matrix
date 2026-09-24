@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CineVerse - Movie Website</title><link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Climax Matrix - Movie Website</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="navbar"><div class="logo">Cine<span>Verse</span></div><nav><a href="#home">Home</a><a href="#trending">Trending</a><a href="#popular">Popular</a><a href="#genres">Genres</a></nav><div class="search-wrap"><input id="searchInput" type="text" placeholder="Search movies..."></div></header>
+  <header class="navbar">
+    <div class="logo">Climax <span>Matrix</span></div>
+    <nav><a href="#home">Home</a><a href="#trending">Trending</a><a href="#popular">Popular</a><a href="#genres">Genres</a></nav>
+    <div class="search-wrap"><input id="searchInput" type="text" placeholder="Search movies..."></div>
+  </header>
   <main>
     <section id="home" class="hero"><div class="hero-content"><p class="badge">FEATURED MOVIE</p><h1>Beyond the Stars</h1><p class="hero-text">A cinematic journey through mystery, friendship and an unforgettable adventure.</p><div class="hero-buttons"><button class="primary" onclick="openTrailer('Beyond the Stars')">▶ Watch Trailer</button><a class="secondary" href="beyond-the-stars.html">＋ More Info</a></div></div></section>
     <section id="trending" class="section"><div class="section-title"><h2>🔥 Trending Now</h2><span>Explore popular picks</span></div><div id="movieGrid" class="movie-grid"></div><p id="noResults" class="no-results">No movies found.</p></section>
@@ -17,7 +23,7 @@
     <section id="genres" class="genres section"><div class="section-title"><h2>🎭 Browse by Genre</h2></div><div class="genre-list"><button onclick="filterGenre('Action')">Action</button><button onclick="filterGenre('Comedy')">Comedy</button><button onclick="filterGenre('Romance')">Romance</button><button onclick="filterGenre('Thriller')">Thriller</button><button onclick="filterGenre('Sci-Fi')">Sci-Fi</button><button onclick="filterGenre('Adventure')">Adventure</button><button onclick="filterGenre('all')">All Movies</button></div></section>
   </main>
   <div id="modal" class="modal"><div class="modal-box"><button class="close" onclick="closeModal()">×</button><div id="modalContent"></div></div></div>
-  <footer><div class="logo">Cine<span>Verse</span></div><p>© 2026 CineVerse. Demo movie website for personal/portfolio use.</p><p class="small">Use only trailers, images and videos that you own or are licensed to use.</p></footer>
+  <footer><div class="logo">Climax <span>Matrix</span></div><p>© 2026 Climax Matrix. Demo movie website for personal/portfolio use.</p><p class="small">Use only trailers, images and videos that you own or are licensed to use.</p></footer>
   <script src="script.js"></script>
 </body>
 </html>
