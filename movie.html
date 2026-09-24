@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineVerse - Movie Details</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Cine<span>Verse</span></div>
+    <nav><a href="index.html#home">Home</a><a href="index.html#trending">Trending</a><a href="index.html#popular">Popular</a><a href="index.html#genres">Genres</a></nav>
+  </header>
+
+  <main class="section movie-details-page">
+    <a class="back-link" href="index.html">← Back to movies</a>
+    <article id="movieDetails" class="movie-details"></article>
+  </main>
+
+  <script>
+    const movieData = {
+      "Beyond the Stars": {genre:"Sci-Fi", year:2026, poster:"poster-1", desc:"A mysterious signal sends a young explorer on a journey beyond everything humanity knows."},
+      "Midnight Run": {genre:"Action", year:2026, poster:"poster-2", desc:"A fast-paced night-time adventure where every decision changes the mission."},
+      "Ocean of Dreams": {genre:"Romance", year:2025, poster:"poster-3", desc:"Two strangers meet during a coastal journey and discover an unexpected connection."},
+      "Dark Signal": {genre:"Thriller", year:2026, poster:"poster-4", desc:"A hidden transmission reveals a secret that someone wants to keep buried."},
+      "Wild Horizon": {genre:"Adventure", year:2025, poster:"poster-5", desc:"A team sets out across a remote landscape in search of a legendary destination."},
+      "City Lights": {genre:"Comedy", year:2026, poster:"poster-6", desc:"A light-hearted story about friendship, ambition and unexpected city adventures."},
+      "The Last Voyage": {genre:"Adventure", year:2026, poster:"poster-7", desc:"An unforgettable voyage takes its crew beyond the edge of the known world."},
+      "Neon Shadow": {genre:"Thriller", year:2026, poster:"poster-8", desc:"A detective follows a mysterious trail through a city illuminated by neon."},
+      "The Origin": {genre:"Sci-Fi", year:2026, poster:"poster-9", desc:"A discovery at the beginning of time changes the future of humanity."}
+    };
+    const name = new URLSearchParams(location.search).get("name") || "Beyond the Stars";
+    const movie = movieData[name] || movieData["Beyond the Stars"];
+    document.title = `${name} - CineVerse`;
+    document.getElementById("movieDetails").innerHTML = `<div class="poster ${movie.poster} movie-detail-poster"><span>${name.toUpperCase()}</span></div><div class="movie-detail-content"><p class="badge">MOVIE DETAILS</p><h1>${name}</h1><p class="movie-meta">${movie.genre} • ${movie.year}</p><p class="hero-text">${movie.desc}</p><button class="primary" onclick="alert('Add your licensed trailer URL here.')">▶ Watch Trailer</button></div>`;
+  </script>
+</body>
+</html>
