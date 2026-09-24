@@ -1,0 +1,23 @@
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#09090d;color:#fff}
+.navbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:28px;padding:16px 6%;background:rgba(8,8,12,.95);border-bottom:1px solid #222}
+.logo{font-size:28px;font-weight:800;letter-spacing:-1px}.logo span{color:#e50914}
+nav{display:flex;gap:20px;flex:1}nav a{color:#ddd;text-decoration:none;font-size:14px}nav a:hover{color:#fff}
+.search-wrap input{width:220px;padding:10px 14px;border:1px solid #333;border-radius:22px;background:#141419;color:#fff;outline:none}
+.hero{min-height:72vh;display:flex;align-items:center;padding:70px 8%;background:linear-gradient(90deg,rgba(4,4,8,.97),rgba(4,4,8,.55),rgba(4,4,8,.15)),linear-gradient(135deg,#18182b,#311118 50%,#07070a)}
+.hero-content{max-width:620px}.badge{color:#ff4650;font-weight:700;letter-spacing:3px;font-size:12px;margin-bottom:14px}
+.hero h1{font-size:clamp(44px,7vw,82px);line-height:.95;margin-bottom:22px}.hero-text{color:#c9c9d0;font-size:18px;line-height:1.6;margin-bottom:28px}
+.hero-buttons{display:flex;gap:12px}.primary,.secondary,.card-info button{border:0;border-radius:7px;padding:12px 18px;font-weight:700;cursor:pointer}.primary{background:#e50914;color:#fff}.secondary{background:#fff;color:#111}
+.section{padding:55px 6%}.section-title{display:flex;justify-content:space-between;align-items:end;margin-bottom:24px}.section-title h2{font-size:28px}.section-title span{color:#888;font-size:13px}
+.movie-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}.movie-card{background:#121218;border-radius:10px;overflow:hidden;transition:.25s}.movie-card:hover{transform:translateY(-6px);box-shadow:0 12px 35px #000}
+.poster{height:290px;display:flex;align-items:end;padding:18px;font-size:22px;font-weight:900;letter-spacing:1px;position:relative;overflow:hidden}
+.poster:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 25%,rgba(255,255,255,.25),transparent 28%),linear-gradient(145deg,transparent,#0009)}
+.poster span{position:relative;z-index:1}.poster-1{background:linear-gradient(145deg,#12264a,#a72a40)}.poster-2{background:linear-gradient(145deg,#42234f,#d16b3a)}.poster-3{background:linear-gradient(145deg,#073b4c,#111827)}.poster-4{background:linear-gradient(145deg,#5a2331,#121212)}.poster-5{background:linear-gradient(145deg,#16423b,#7d6a2e)}.poster-6{background:linear-gradient(145deg,#30205a,#ce3e75)}.poster-7{background:linear-gradient(145deg,#183d61,#9a3b25)}.poster-8{background:linear-gradient(145deg,#26154d,#e33b76)}.poster-9{background:linear-gradient(145deg,#0c4657,#8a9b2e)}
+.card-info{padding:14px}.card-info h3{font-size:16px;margin-bottom:6px}.card-info p{font-size:12px;color:#888;margin-bottom:12px}.card-info button{background:#292930;color:#fff;padding:8px 12px}
+.genres{background:#0d0d12}.genre-list{display:flex;flex-wrap:wrap;gap:12px}.genre-list button{background:#18181f;color:#ddd;border:1px solid #292933;border-radius:22px;padding:11px 18px;cursor:pointer}.genre-list button:hover{background:#e50914;border-color:#e50914;color:#fff}
+.no-results{display:none;color:#888;padding:25px 0}
+.modal{display:none;position:fixed;inset:0;background:#000b;z-index:50;align-items:center;justify-content:center;padding:20px}.modal-box{position:relative;background:#15151c;border:1px solid #30303a;border-radius:14px;max-width:650px;width:100%;padding:35px}.close{position:absolute;right:15px;top:10px;background:none;border:0;color:#fff;font-size:30px;cursor:pointer}.modal-box h2{font-size:32px;margin-bottom:12px}.modal-box p{color:#bbb;line-height:1.7;margin:10px 0}.trailer-box{height:280px;background:linear-gradient(135deg,#22152b,#681d28);display:flex;align-items:center;justify-content:center;border-radius:10px;margin-top:20px;color:#fff;font-size:20px}
+footer{text-align:center;padding:40px 20px;border-top:1px solid #222;color:#777}.small{font-size:11px;margin-top:8px}
+@media(max-width:900px){.movie-grid{grid-template-columns:repeat(3,1fr)}nav{display:none}.search-wrap{margin-left:auto}}
+@media(max-width:600px){.navbar{padding:13px 4%}.logo{font-size:23px}.search-wrap input{width:145px}.hero{min-height:65vh;padding:50px 6%}.hero-text{font-size:15px}.movie-grid{grid-template-columns:repeat(2,1fr);gap:12px}.poster{height:220px;font-size:17px}.section{padding:40px 5%}.section-title{display:block}.section-title span{display:block;margin-top:6px}}
