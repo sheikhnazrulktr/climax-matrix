@@ -19,16 +19,19 @@ const movies = [
   ["Safia/Safdar", "Drama"], ["Satluj", "Drama"], ["September 21", "Thriller"], ["Shatak: Sangh Ke 100 Varsh", "Drama"], ["Subedaar", "Action"], ["System", "Thriller"],
   ["Teesri Begum", "Drama"], ["Tera Yaar Hoon Main", "Comedy"], ["Toaster", "Comedy"], ["Tu Yaa Main", "Romance"], ["Tum Mere Ho", "Romance"],
   ["Uttar Da Puttar", "Drama"], ["Vibe", "Romance"], ["Welcome to the Jungle", "Comedy"]
-].map(([name, genre], index) => ({
-  name, genre, year: 2026, poster: `poster-${(index % 9) + 1}`, page: `movie.html?name=${encodeURIComponent(name)}`
-}));
+].map(([name, genre], index) => ({ name, genre, year: 2026, poster: `poster-${(index % 9) + 1}`, page: `movie.html?name=${encodeURIComponent(name)}` }));
 
 const grid = document.getElementById("movieGrid");
 const search = document.getElementById("searchInput");
 const noResults = document.getElementById("noResults");
 
+// A poster image is generated for every title. Replace this URL with licensed artwork when available.
+function posterUrl(name) {
+  return `https://placehold.co/600x900/15151c/ffffff?text=${encodeURIComponent(name)}`;
+}
+
 function render(list = movies) {
-  grid.innerHTML = list.map(m => `<article class="movie-card"><a class="poster-link" href="${m.page}" aria-label="Open ${m.name}"><div class="poster ${m.poster}"><span>${m.name.toUpperCase()}</span></div></a><div class="card-info"><h3>${m.name}</h3><p>${m.genre} • ${m.year}</p><button onclick="openTrailer('${m.name.replace(/'/g, "\\'")}')">▶ Trailer</button></div></article>`).join("");
+  grid.innerHTML = list.map(m => `<article class="movie-card"><a class="poster-link" href="${m.page}" aria-label="Open ${m.name}"><div class="poster ${m.poster}"><img src="${posterUrl(m.name)}" alt="${m.name} poster" loading="lazy"><span>${m.name.toUpperCase()}</span></div></a><div class="card-info"><h3>${m.name}</h3><p>${m.genre} • ${m.year}</p><button onclick="openTrailer('${m.name.replace(/'/g, "\\'")}')">▶ Trailer</button></div></article>`).join("");
   noResults.style.display = list.length ? "none" : "block";
 }
 function openTrailer(name) { document.getElementById("modalContent").innerHTML = `<h2>${name} — Trailer</h2><p>Add a licensed trailer or official YouTube embed here.</p>`; document.getElementById("modal").style.display = "flex"; }
